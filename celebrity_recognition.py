@@ -1,7 +1,7 @@
 import boto3
 import streamlit
 
-image = streamlit.file.uploader("Upload an image")
+image = streamlit.file_uploader("Upload an image")
 
 if image is not None:
     bytes_data=image.getvalue()
