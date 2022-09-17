@@ -1,3 +1,6 @@
+import boto3
+import streamlit
+
 image = streamlit.file.uploader("Upload an image")
 
 if image is not None:
