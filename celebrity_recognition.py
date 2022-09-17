@@ -1,4 +1,8 @@
-image = streamlit.file.uploader() 
+image = streamlit.file.uploader("Upload an image")
+
+if image is not None:
+    bytes_data=image.getvalue()
+    st.write(bytes_data)
 
 client = boto3.client('rekognition', 
                     aws_access_key_id = "AKIA3UTMBR4M67BK55G4",
@@ -7,5 +11,5 @@ client = boto3.client('rekognition',
 with open(image, 'rb') as source_image:
     source_bytes=source_image.read()
 
-response = client.recognize_celebrities(source_image)
+response = client.recognize_celebrities(bytes_data)
 streamlit.write(response['Name'])
