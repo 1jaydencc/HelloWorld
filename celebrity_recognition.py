@@ -7,4 +7,4 @@ client = boto3.client('rekognition', region_name='us-west-2', aws_access_key_id 
 
 with open(photo, 'rb') as image:
         response = client.recognize_celebrities(Image={'Bytes': image.read()})
-streamls': image.read()})it.write(response)
+streamlit.write(response)
