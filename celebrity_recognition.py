@@ -26,7 +26,7 @@ if st.button('Analyze'):
         st.write("No celebrity detected.")
         
     #if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Urls' in response['CelebrityFaces'][0] and 1 < len(response['CelebrityFaces'][0]['Urls']):
-        st.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
+    st.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
         
     #else: 
         #st.write("No IMDb profile.")
