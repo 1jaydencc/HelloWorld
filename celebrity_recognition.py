@@ -6,7 +6,7 @@ streamlit.title('Celebrity Recognizer')
 streamlit.subheader('By Jayden Cheung')
 
 image_file = streamlit.file_uploader("Upload an image")
-streamlit.write("If you get an error, you either didn't use a JPG or PNG or the image is invalid")
+streamlit.write("If you get an error, make sure you use a valid JPG or PNG.")
 
 if image_file is not None:
     img = image_file.read()
