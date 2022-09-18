@@ -16,7 +16,7 @@ if streamlit.button('Analyze'):
     response = client.recognize_celebrities(Image = {'Bytes': content})
     if 'Celebrity Faces' in response:
         if 0 in response['CelebrityFaces']:
-            if 'Name' in response['CelebrityFaces'][0]
+            if 'Name' in response['CelebrityFaces'][0]:
                 streamlit.write("Name:", response['CelebrityFaces'][0]['Name'])
                 streamlit.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
     else: 
