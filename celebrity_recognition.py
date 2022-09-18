@@ -18,7 +18,7 @@ if st.button('Analyze'):
     file_img = BytesIO(img)
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
-    if 'CelebrityFaces' in response and 0 in response['CelebrityFaces'] and 'Name' in response['CelebrityFaces'][0]:
+    if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Name' in response['CelebrityFaces'][0]:
 
         st.write("Name:", response['CelebrityFaces'][0]['Name'])
         st.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
