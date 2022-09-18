@@ -15,4 +15,5 @@ if streamlit.button('Analyze'):
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
     streamlit.write("Name:", response['CelebrityFaces'][0]['Name'])
+    streamlit.write("IMDb Profile: [link](response['CelebrityFaces'][0]['Urls'][1])")
     
