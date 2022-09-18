@@ -25,5 +25,4 @@ if st.button('Analyze'):
 
     else: 
         st.write("No celebrity detected.")
-        st.write(response)
     
