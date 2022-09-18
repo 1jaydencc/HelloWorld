@@ -3,6 +3,7 @@ import streamlit
 from io import BytesIO
 
 image_file = streamlit.file_uploader("Upload an image")
+streamlit.write("If you get an error, either you didn't use a JPG or PNG, or the image does not contain a celebrity face. I know, it's a work in progress")
 
 if image_file is not None:
     img = image_file.read()
