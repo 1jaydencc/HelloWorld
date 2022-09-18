@@ -15,5 +15,5 @@ if streamlit.button('Analyze'):
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
     streamlit.write("Name:", response['CelebrityFaces']['Name'])
-    streamlit.write("IMDb Profile:", response['CelebrityFaces']['Urls'][0]
+    streamlit.write("IMDb Profile:", response['CelebrityFaces']['Urls'][0])
     
