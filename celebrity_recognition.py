@@ -19,15 +19,16 @@ if st.button('Analyze'):
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
     if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Name' in response['CelebrityFaces'][0]:
-
-        st.write("Name:", response['CelebrityFaces'][0]['Name'])
-
+        for i in response['CelebrityFaces']:
+            st.write("Name:", response['CelebrityFaces'][i]['Name'])
+            if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Urls' in response['CelebrityFaces'][0] and 1 < len(response['CelebrityFaces'][0]['Urls']):
+                st.write("IMDb Profile:" , response['CelebrityFaces'][i]['Urls'][1])
+            else: 
+                st.write("No IMDb profile link in database.")
     else: 
         st.write("No celebrity detected.")
         
-    if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Urls' in response['CelebrityFaces'][0] and 1 < len(response['CelebrityFaces'][0]['Urls']):
-        st.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
+
         
-    else: 
-        st.write("No IMDb profile link in database.")
+
     
