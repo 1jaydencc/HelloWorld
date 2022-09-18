@@ -19,7 +19,7 @@ if streamlit.button('Analyze'):
     json_data = json.load(response)
     name = json_data["CelebrityFaces"][0]["Name"]
     imdb = json_data["CelebrityFaces"][0]["Urls"][1]
-    streamlit.write(name)
+    streamlit.write("Name", name)
     streamlit.write()
-    streamlit.write([link]imdb)
+    streamlit.write("IMDb Profile"[link](imdb))
     
