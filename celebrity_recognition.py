@@ -17,6 +17,5 @@ if streamlit.button('Analyze'):
     if response is not None:
         streamlit.write("Name:", response['CelebrityFaces'][0]['Name'])
         streamlit.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
-    else:
-        streamlit.write("No celebrity")
+    streamlit.write(response)
     
