@@ -14,6 +14,6 @@ client = boto3.client('rekognition', region_name='us-west-2', aws_access_key_id 
 if streamlit.button('Analyze'):
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
-    streamlit.write("Name", response["Name"])
+    streamlit.write("Name", response['Name'])
 
     
