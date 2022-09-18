@@ -18,7 +18,7 @@ if st.button('Analyze'):
     file_img = BytesIO(img)
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
-#    if 'Celebrity Faces' in response:
+#    if 'CelebrityFaces' in response:
  #       if 0 in response['CelebrityFaces']:
   #          if 'Name' in response['CelebrityFaces'][0]:
    #             st.write("Name:", response['CelebrityFaces'][0]['Name'])
@@ -26,5 +26,5 @@ if st.button('Analyze'):
     #else: 
      #   st.write("No celebrity detected.")
     st.write(response)
-    st.write('Celebrity Faces' in response)
+    st.write('CelebrityFaces' in response)
     
