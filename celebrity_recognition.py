@@ -2,8 +2,12 @@ import boto3
 import streamlit
 from io import BytesIO
 
+st.title('Celebrity Recognizer')
+st.header('Celebrity Recognizer')
+st.subheader('By Jayden Cheung')
+
 image_file = streamlit.file_uploader("Upload an image")
-streamlit.write("If you get an error, you either didn't use a JPG or PNG, the image is invalid, or the image does not contain a celebrity face. I know, it's a work in progress.")
+streamlit.write("If you get an error, you either didn't use a JPG or PNG or the image is invalid")
 
 if image_file is not None:
     img = image_file.read()
