@@ -1,12 +1,16 @@
 import boto3
 import streamlit
 
-image = streamlit.file_uploader("Upload an image")
+image_file = streamlit.file_uploader("Upload an image")
+
+if image_file is not None:
+    image_data = image_file.read()
+    img = Image.load_img(image_data)
 
 client = boto3.client('rekognition', region_name='us-west-2', aws_access_key_id = streamlit.secrets["aws_access_key_id"], aws_secret_access_key= streamlit.secrets["aws_secret_access_key"])
 
 if streamlit.button('Analyze'):
-    with open(image, 'rb') as image_file:
+    with open(img, 'rb') as image_file:
         content = image_file.read()
 
     response = client.recognize_celebrities(Image = {'Bytes': content}, MaxLabels = 10)
