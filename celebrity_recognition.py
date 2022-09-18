@@ -21,7 +21,7 @@ if st.button('Analyze'):
     if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Name' in response['CelebrityFaces'][0]:
         for i in range(len(response['CelebrityFaces'])):
             st.write("Name:", response['CelebrityFaces'][i]['Name'])
-            if 'Urls' in response['CelebrityFaces'][0] and 1 < len(response['CelebrityFaces'][0]['Urls']):
+            if 'Urls' in response['CelebrityFaces'][i] and 1 < len(response['CelebrityFaces'][i]['Urls']):
                 st.write("IMDb Profile:" , response['CelebrityFaces'][i]['Urls'][1])
             else: 
                 st.write("No IMDb profile link in database.")
