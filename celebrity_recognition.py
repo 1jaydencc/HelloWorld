@@ -12,7 +12,7 @@ st.write("Make sure you use a valid JPG or PNG. Other image types will give you 
 if image_file is not None:
     img = image_file.read()
 
-client = boto3.client('rekognition', region_name='us-west-2', aws_access_key_id = streamlit.secrets["aws_access_key_id"], aws_secret_access_key= streamlit.secrets["aws_secret_access_key"])
+client = boto3.client('rekognition', region_name='us-west-2', aws_access_key_id = st.secrets["aws_access_key_id"], aws_secret_access_key= st.secrets["aws_secret_access_key"])
 
 if st.button('Analyze'):
     file_img = BytesIO(img)
