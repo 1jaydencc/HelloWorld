@@ -14,8 +14,10 @@ if streamlit.button('Analyze'):
     file_img = BytesIO(img)
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
-    #if response is not None:
-     #   streamlit.write("Name:", response['CelebrityFaces'][0]['Name'])
-     #   streamlit.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
-    streamlit.write(response)
+    if 'Name' in response['CelebrityFaces'][0]:
+        streamlit.write("Name:", response['CelebrityFaces'][0]['Name'])
+        streamlit.write("IMDb Profile:" , response['CelebrityFaces'][0]['Urls'][1])
+    else: 
+        streamlit.write("No celebrity")
+
     
