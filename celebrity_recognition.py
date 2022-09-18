@@ -26,5 +26,5 @@ if st.button('Analyze'):
     #else: 
      #   st.write("No celebrity detected.")
     st.write(response)
-    st.write(if 'Celebrity Faces' in response)
+    st.write('Celebrity Faces' in response)
     
