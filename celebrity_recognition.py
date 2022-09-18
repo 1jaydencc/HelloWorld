@@ -3,7 +3,6 @@ import streamlit
 from io import BytesIO
 
 streamlit.title('Celebrity Recognizer')
-streamlit.header('Celebrity Recognizer')
 streamlit.subheader('By Jayden Cheung')
 
 image_file = streamlit.file_uploader("Upload an image")
