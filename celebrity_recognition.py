@@ -19,7 +19,7 @@ if st.button('Analyze'):
     content=file_img.read()
     response = client.recognize_celebrities(Image = {'Bytes': content})
     if 'CelebrityFaces' in response and 0 < len(response['CelebrityFaces']) and 'Name' in response['CelebrityFaces'][0]:
-        for i in response['CelebrityFaces']:
+        for i in range(len(response['CelebrityFaces'])):
             st.write("Name:", response['CelebrityFaces'][i]['Name'])
             
     else: 
