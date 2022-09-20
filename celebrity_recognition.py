@@ -3,7 +3,6 @@ import streamlit as st
 from io import BytesIO
 
 st.title('Celebrity Recognizer')
-st.subheader('By Jayden Cheung')
 st.write("The celebrity recognizer will recognize any celebrity from an image as long as their face is prominent. Just upload an image and we'll do the rest.")
 
 image_file = st.file_uploader("Upload an image")
